@@ -1,0 +1,37 @@
+[versions]
+vineflower = "1.9.3"
+minecraft = "1.20.4"
+fabricloader = "0.15.7"
+yarn = "1.20.4+build.3"
+fabricloom = "1.5-SNAPSHOT"
+intellij = "1.17.1-SNAPSHOT"
+kotlin-jetbrains = "1.9.23"
+lombok = "8.4"
+fabric-api = "0.96.11+1.20.4"
+night-config = "3.6.7"
+ktfmt = "0.17.0"
+kotlin-fabric = "1.10.19+kotlin.1.9.23"
+
+[libraries]
+vineflower-decompiler = { module = "org.vineflower:vineflower", version.ref = "vineflower" }
+minecraft-game = { module = "com.mojang:minecraft", version.ref = "minecraft" }
+fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabricloader" }
+yarn-mappings = { module = "net.fabricmc:yarn", version.ref = "yarn" }
+fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api" }
+night-config = { module = "com.electronwill.night-config:toml", version.ref = "night-config" }
+kotlin-fabric = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "kotlin-fabric" }
+
+[bundles]
+vineflower = ["vineflower_decompiler"]
+minecraft = ["minecraft_game"]
+yarn = ["yarn_mappings"]
+fabric = ["fabric_loader", "fabric_api"]
+night = ["night_config"]
+kotlin = ["kotlin_fabric"]
+
+[plugins]
+fabricloom = { id = "fabric-loom", version.ref = "fabricloom" }
+intellij = { id = "org.jetbrains.intellij", version.ref = "intellij" }
+lombok = { id = "io.freefair.lombok", version.ref = "lombok" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-jetbrains" }
+ktfmt = { id = "com.ncorti.ktfmt.gradle", version.ref = "ktfmt" }

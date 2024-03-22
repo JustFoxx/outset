@@ -1,0 +1,31 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "name": "Outset",
+    "description": "Server-side fabric mod where players play as different creatures",
+    "authors": [
+        "kittech"
+    ],
+    "license": "LGPL-3.0",
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "minecraft": "~${minecraft_version}",
+        "java": ">=${java_version}",
+        "fabric-language-kotlin": ">=${kotlin_fabric_version}"
+    },
+    "contact": {
+        "website": "https://github.com/justfoxx/outset",
+        "issues": "https://github.com/justfoxx/outset/issues",
+        "sources": "https://github.com/justfoxx/outset"
+    },
+    "entrypoints": {
+        "main": [
+            {
+                "adapter": "kotlin",
+                "value": "io.github.justfoxx.outset.Main::init"
+            }
+        ]
+    },
+    "mixins": []
+}
