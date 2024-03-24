@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener
 import net.minecraft.resource.ResourceManager
 import net.minecraft.resource.ResourceType
+import net.minecraft.util.Identifier
 
 class Events {
     init {
@@ -23,7 +24,9 @@ class Events {
     fun onOriginDataReload(manager: ResourceManager) {
         val files =
             manager.findResources("outsets") { FormatDetector.detectByName(it.path) != null }
-                .mapKeys { it.key.path.substringBefore('.') }
+                .mapKeys { Identifier(it.key.namespace,it.key.path.substringBefore('.').substringAfter('/')) }
+                .mapValues { it.value.reader.readLines() }
         this::class.getLogger().info("Loaded ${files.keys}")
+        this::class.getLogger().info("Loaded ${files.values.flatten()} entries")
     }
 }
