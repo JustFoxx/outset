@@ -3,7 +3,7 @@
     "id": "${mod_id}",
     "version": "${version}",
     "name": "Outset",
-    "description": "Server-side fabric mod where players play as different creatures",
+    "description": "Server-side Mod inspired by Origins. Play as creatures",
     "authors": [
         "kittech"
     ],

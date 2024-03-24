@@ -18,7 +18,10 @@ minecraft-game = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabricloader" }
 yarn-mappings = { module = "net.fabricmc:yarn", version.ref = "yarn" }
 fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api" }
-night-config = { module = "com.electronwill.night-config:toml", version.ref = "night-config" }
+night-config-toml = { module = "com.electronwill.night-config:toml", version.ref = "night-config" }
+night-config-json = { module = "com.electronwill.night-config:json", version.ref = "night-config" }
+night-config-hocon = { module = "com.electronwill.night-config:hocon", version.ref = "night-config" }
+night-config-yaml = { module = "com.electronwill.night-config:yaml", version.ref = "night-config" }
 kotlin-fabric = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "kotlin-fabric" }
 
 [bundles]
@@ -26,7 +29,7 @@ vineflower = ["vineflower_decompiler"]
 minecraft = ["minecraft_game"]
 yarn = ["yarn_mappings"]
 fabric = ["fabric_loader", "fabric_api"]
-night = ["night_config"]
+night = ["night_config_yaml", "night_config_hocon", "night_config_toml", "night_config_json"]
 kotlin = ["kotlin_fabric"]
 
 [plugins]

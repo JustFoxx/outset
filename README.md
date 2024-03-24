@@ -1,2 +1,2 @@
-# outset
-Server-side fabric mod where players play as different creatures 
+# outsets
+Server-side Mod inspired by Origins. Play as creatures
